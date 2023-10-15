@@ -9,7 +9,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'pgsql:host=192.168.55.254;port=5432;dbname=forms',
     'username' => 'forms',
-    'password' => 'forms',
+    'password' => 'form',
     'charset' => 'utf8',
 
 
