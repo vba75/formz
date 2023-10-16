@@ -5,27 +5,28 @@ namespace app\models;
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
     public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
+    public $fio;
+    public $email;
+    public $passwhash;
+    public $auth_key;
+    #public $accessToken;
 
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
+    // private static $users = [
+    //     '100' => [
+    //         'id' => '100',
+    //         'username' => 'admin',
+    //         'password' => 'admin',
+    //         'authKey' => 'test100key',
+    //         'accessToken' => '100-token',
+    //     ],
+    //     '101' => [
+    //         'id' => '101',
+    //         'username' => 'demo',
+    //         'password' => 'demo',
+    //         'authKey' => 'test101key',
+    //         'accessToken' => '101-token',
+    //     ],
+    // ];
 
 
     /**
@@ -81,15 +82,15 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->authKey;
+        return $this->auth_key;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function validateAuthKey($authKey)
+    public function validateAuthKey($auth_key)
     {
-        return $this->authKey === $authKey;
+        return $this->auth_key === $auth_key;
     }
 
     /**
@@ -100,6 +101,6 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        return $this->passhash === $password;
     }
 }
