@@ -9,9 +9,6 @@ return [
     'charset' => 'utf8',
 
 
-// Комментарии для проверки пуша
-
-
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
     //'schemaCacheDuration' => 60,
